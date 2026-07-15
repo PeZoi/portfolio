@@ -3,7 +3,102 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 240 5% 96%; /* #f5f5f7 - Xám trắng mịn Apple */
+    --foreground: 240 5% 12%;  /* #1d1d1f - Chì đậm */
+    --card: 0 0% 100%;         /* #ffffff */
+    --card-border: 240 5% 90%; /* #e4e4e7 */
+    --text-muted: 240 3% 44%;  /* #6e6e73 */
+  }
+
+  .dark {
+    --background: 220 12% 6%; /* #0d0e11 - Xám graphite trầm nhám sang trọng */
+    --foreground: 240 5% 90%;  /* #e4e4e7 - Xám nhạt */
+    --card: 220 12% 9%;        /* #13151a - Tương phản mịn */
+    --card-border: 220 10% 16%;/* #1f2229 */
+    --text-muted: 240 3% 60%;  /* #8a8a93 */
+  }
+
   body {
-    @apply antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    transition-property: color, background-color, border-color;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    @apply antialiased font-sans;
+  }
+
+  /* --- Premium Form Styling --- */
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="number"],
+  textarea {
+    @apply w-full rounded-lg border border-zinc-200 bg-white px-4 py-2.5 text-sm text-zinc-900 transition-all placeholder:text-zinc-400 focus:border-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-400/20 dark:border-zinc-800/80 dark:bg-zinc-900/30 dark:text-zinc-200 dark:placeholder:text-zinc-600 dark:focus:border-zinc-600 dark:focus:ring-zinc-500/20;
+  }
+
+  select {
+    @apply w-full rounded-lg border border-zinc-200 bg-white px-4 py-2.5 text-sm text-zinc-900 transition-all focus:border-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-400/20 dark:border-zinc-800/80 dark:bg-zinc-900/30 dark:text-zinc-200 dark:focus:border-zinc-600 dark:focus:ring-zinc-500/20;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%2371717a' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+    background-position: right 0.85rem center;
+    background-repeat: no-repeat;
+    background-size: 1.1rem;
+    padding-right: 2.5rem;
+  }
+
+  .dark select {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%23a1a1aa' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+  }
+
+  /* --- Khắc phục icon SVG đơn sắc bị ẩn trên các theme --- */
+
+  /* Light mode: icon fill trắng → đổi sang đen (vd: Next.js logo) */
+  :root .skill-icon svg path[fill="#fff"],
+  :root .skill-icon svg path[fill="#FFF"],
+  :root .skill-icon svg path[fill="#ffffff"],
+  :root .skill-icon svg path[fill="#FFFFFF"],
+  :root .skill-icon svg path[fill="white"],
+  :root .skill-icon svg circle[fill="#fff"],
+  :root .skill-icon svg circle[fill="#FFF"],
+  :root .skill-icon svg circle[fill="#ffffff"],
+  :root .skill-icon svg circle[fill="#FFFFFF"],
+  :root .skill-icon svg circle[fill="white"],
+  :root .skill-icon svg rect[fill="#fff"],
+  :root .skill-icon svg rect[fill="#ffffff"],
+  :root .skill-icon svg polygon[fill="#fff"],
+  :root .skill-icon svg polygon[fill="#ffffff"] {
+    fill: #1d1d1f;
+  }
+
+  /* Dark mode: bỏ override ở trên, giữ fill trắng mặc định cho icon (đã hiện tốt trên nền tối) */
+  .dark .skill-icon svg path[fill="#fff"],
+  .dark .skill-icon svg path[fill="#FFF"],
+  .dark .skill-icon svg path[fill="#ffffff"],
+  .dark .skill-icon svg path[fill="#FFFFFF"],
+  .dark .skill-icon svg path[fill="white"],
+  .dark .skill-icon svg circle[fill="#fff"],
+  .dark .skill-icon svg circle[fill="#FFF"],
+  .dark .skill-icon svg circle[fill="#ffffff"],
+  .dark .skill-icon svg circle[fill="#FFFFFF"],
+  .dark .skill-icon svg circle[fill="white"],
+  .dark .skill-icon svg rect[fill="#fff"],
+  .dark .skill-icon svg rect[fill="#ffffff"],
+  .dark .skill-icon svg polygon[fill="#fff"],
+  .dark .skill-icon svg polygon[fill="#ffffff"] {
+    fill: #e4e4e7;
+  }
+
+  /* Dark mode: icon fill đen → đổi sang sáng */
+  .dark .skill-icon svg path[fill="#000"],
+  .dark .skill-icon svg path[fill="#000000"],
+  .dark .skill-icon svg path[fill="black"],
+  .dark .skill-icon svg circle[fill="#000"],
+  .dark .skill-icon svg circle[fill="#000000"],
+  .dark .skill-icon svg rect[fill="#000"],
+  .dark .skill-icon svg rect[fill="#000000"],
+  .dark .skill-icon svg polygon[fill="#000"],
+  .dark .skill-icon svg polygon[fill="#000000"] {
+    fill: #e4e4e7;
   }
 }
