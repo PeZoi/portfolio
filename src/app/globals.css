@@ -53,52 +53,6 @@
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%23a1a1aa' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
   }
 
-  /* --- Khắc phục icon SVG đơn sắc bị ẩn trên các theme --- */
-  :root .skill-icon svg path[fill="#fff"],
-  :root .skill-icon svg path[fill="#FFF"],
-  :root .skill-icon svg path[fill="#ffffff"],
-  :root .skill-icon svg path[fill="#FFFFFF"],
-  :root .skill-icon svg path[fill="white"],
-  :root .skill-icon svg circle[fill="#fff"],
-  :root .skill-icon svg circle[fill="#FFF"],
-  :root .skill-icon svg circle[fill="#ffffff"],
-  :root .skill-icon svg circle[fill="#FFFFFF"],
-  :root .skill-icon svg circle[fill="white"],
-  :root .skill-icon svg rect[fill="#fff"],
-  :root .skill-icon svg rect[fill="#ffffff"],
-  :root .skill-icon svg polygon[fill="#fff"],
-  :root .skill-icon svg polygon[fill="#ffffff"] {
-    fill: #1d1d1f;
-  }
-
-  .dark .skill-icon svg path[fill="#fff"],
-  .dark .skill-icon svg path[fill="#FFF"],
-  .dark .skill-icon svg path[fill="#ffffff"],
-  .dark .skill-icon svg path[fill="#FFFFFF"],
-  .dark .skill-icon svg path[fill="white"],
-  .dark .skill-icon svg circle[fill="#fff"],
-  .dark .skill-icon svg circle[fill="#FFF"],
-  .dark .skill-icon svg circle[fill="#ffffff"],
-  .dark .skill-icon svg circle[fill="#FFFFFF"],
-  .dark .skill-icon svg circle[fill="white"],
-  .dark .skill-icon svg rect[fill="#fff"],
-  .dark .skill-icon svg rect[fill="#ffffff"],
-  .dark .skill-icon svg polygon[fill="#fff"],
-  .dark .skill-icon svg polygon[fill="#ffffff"] {
-    fill: #e4e4e7;
-  }
-
-  .dark .skill-icon svg path[fill="#000"],
-  .dark .skill-icon svg path[fill="#000000"],
-  .dark .skill-icon svg path[fill="black"],
-  .dark .skill-icon svg circle[fill="#000"],
-  .dark .skill-icon svg circle[fill="#000000"],
-  .dark .skill-icon svg rect[fill="#000"],
-  .dark .skill-icon svg rect[fill="#000000"],
-  .dark .skill-icon svg polygon[fill="#000"],
-  .dark .skill-icon svg polygon[fill="#000000"] {
-    fill: #e4e4e7;
-  }
 }
 
 /* --- Portfolio Page Utilities --- */
