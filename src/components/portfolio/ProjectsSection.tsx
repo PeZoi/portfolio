@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import type { Skill } from "@/types/database";
+import { TiltCard } from "./TiltCard";
+import { ScrambleText } from "./ScrambleText";
 
 interface ProjectWithSkills {
   id: string;
@@ -211,22 +213,23 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="mb-16 max-w-2xl text-left"
         >
-          <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-accent">
-            Sản phẩm
+          <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-accent cursor-default select-none">
+            <ScrambleText text="Sản phẩm" triggerOnHover={true} />
           </span>
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground md:text-4xl mt-2">
-            Workspace Dự án
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground md:text-4xl mt-2 cursor-default select-none">
+            <ScrambleText text="Workspace Dự án" triggerOnHover={true} />
           </h2>
         </motion.div>
 
         {/* --- IDE INTERACTIVE LAYOUT --- */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full rounded-2xl border border-zinc-200/80 dark:border-card-border bg-white/60 dark:bg-black/50 backdrop-blur-md shadow-xl shadow-zinc-200/50 dark:shadow-none overflow-hidden flex flex-col md:flex-row h-[600px]"
-        >
+        <TiltCard className="w-full rounded-2xl overflow-hidden shadow-xl shadow-zinc-200/50 dark:shadow-none">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full h-full flex flex-col md:flex-row h-[600px] rounded-2xl border border-zinc-200/80 dark:border-card-border bg-white/60 dark:bg-black/50 backdrop-blur-md overflow-hidden"
+          >
           {/* 1. Sidebar Explorer (Trái) */}
           <div className="w-full md:w-56 bg-zinc-50/60 dark:bg-black/60 border-r border-zinc-200/60 dark:border-card-border/70 flex-shrink-0 flex flex-col justify-between">
             <div>
@@ -433,7 +436,8 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
             </div>
           </div>
         </motion.div>
-      </div>
-    </section>
+      </TiltCard>
+    </div>
+  </section>
   );
 }

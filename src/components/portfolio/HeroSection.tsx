@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import type { Profile } from "@/types/database";
+import { ScrambleText } from "./ScrambleText";
 
 interface HeroSectionProps {
   profile: Profile | null;
@@ -87,9 +88,9 @@ export default function HeroSection({ profile }: HeroSectionProps) {
         >
           {/* Status badge */}
           <motion.div variants={itemVariants}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/5 px-4 py-1.5 text-[10px] font-mono tracking-widest text-accent uppercase">
+            <span className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/5 px-4 py-1.5 text-[10px] font-mono tracking-widest text-accent uppercase cursor-default select-none">
               <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-              system.status = "ready_to_collaborate"
+              <ScrambleText text='system.status = "ready_to_collaborate"' triggerOnHover={true} />
             </span>
           </motion.div>
 
@@ -99,8 +100,8 @@ export default function HeroSection({ profile }: HeroSectionProps) {
             className="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.15] max-w-4xl text-center uppercase"
           >
             Tôi là{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-emerald-400 to-emerald-500 whitespace-nowrap">
-              {name}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-emerald-400 to-emerald-500 whitespace-nowrap cursor-default select-none">
+              <ScrambleText text={name} triggerOnHover={true} />
             </span>
 
           </motion.h1>

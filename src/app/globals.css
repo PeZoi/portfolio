@@ -188,3 +188,33 @@
   @apply max-w-full rounded-xl my-4 border border-card-border/50 shadow-md inline-block;
 }
 
+
+/* --- Ambient Background Animations --- */
+@keyframes aurora-float-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+@keyframes aurora-float-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-40px, 40px) scale(1.08);
+  }
+}
+
+.animate-aurora-1 {
+  animation: aurora-float-1 25s ease-in-out infinite;
+}
+
+.animate-aurora-2 {
+  animation: aurora-float-2 20s ease-in-out infinite;
+}

@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Profile } from "@/types/database";
+import { TiltCard } from "./TiltCard";
+import { ScrambleText } from "./ScrambleText";
 
 interface AboutSectionProps {
   profile: Profile | null;
@@ -158,11 +160,11 @@ ${bio}`;
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="mb-12 text-left"
         >
-          <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-accent">
-            Tiểu sử
+          <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-accent cursor-default select-none">
+            <ScrambleText text="Tiểu sử" triggerOnHover={true} />
           </span>
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground md:text-4xl mt-2">
-            Về bản thân tôi
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground md:text-4xl mt-2 cursor-default select-none">
+            <ScrambleText text="Về bản thân tôi" triggerOnHover={true} />
           </h2>
         </motion.div>
 
@@ -170,14 +172,15 @@ ${bio}`;
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           
           {/* Card 1: IDE Editor Bio Mockup (File Explorer + Line Numbers + Syntax Highlighting) - Chiếm 2 cột */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            onViewportEnter={() => setStartTyping(true)}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-2 flex flex-col justify-between rounded-2xl border border-zinc-200/80 dark:border-card-border bg-white/60 dark:bg-black/35 backdrop-blur-sm hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 shadow-xl shadow-zinc-200/50 dark:shadow-none min-h-[380px] overflow-hidden"
-          >
+          <TiltCard className="lg:col-span-2 rounded-2xl overflow-hidden shadow-xl shadow-zinc-200/50 dark:shadow-none">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              onViewportEnter={() => setStartTyping(true)}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full h-full flex flex-col justify-between rounded-2xl border border-zinc-200/80 dark:border-card-border bg-white/60 dark:bg-black/35 backdrop-blur-sm hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 min-h-[380px] overflow-hidden"
+            >
             {/* IDE Title Bar */}
             <div className="flex items-center justify-between px-5 py-3 bg-zinc-150/40 dark:bg-black/50 border-b border-zinc-200/60 dark:border-card-border/60 select-none">
               <div className="flex items-center gap-1.5">
@@ -257,15 +260,17 @@ ${bio}`;
               </div>
             </div>
           </motion.div>
+        </TiltCard>
 
           {/* Card 2: Chân dung ảnh nghệ thuật radar scanlines (1 cột dọc) */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="group relative rounded-2xl border border-zinc-200/80 dark:border-card-border bg-white/20 dark:bg-card/15 overflow-hidden min-h-[380px] hover:border-accent/40 transition-all duration-300 shadow-xl shadow-zinc-200/50 dark:shadow-none cursor-crosshair"
-          >
+          <TiltCard className="rounded-2xl overflow-hidden shadow-xl shadow-zinc-200/50 dark:shadow-none">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full h-full group relative rounded-2xl border border-zinc-200/80 dark:border-card-border bg-white/20 dark:bg-card/15 overflow-hidden min-h-[380px] hover:border-accent/40 transition-all duration-300 cursor-crosshair"
+            >
             {avatarUrl ? (
               /* eslint-disable-next-line @next/next/no-img-element */
               <img
@@ -294,15 +299,17 @@ ${bio}`;
               </h4>
             </div>
           </motion.div>
+        </TiltCard>
 
           {/* Card 3: FULL WIDTH BOTTOM CARD (Tech Orbit + Clock + GitHub Grid) - Chiếm trọn 3 cột */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-3 rounded-2xl border border-zinc-200/80 dark:border-card-border bg-white/60 dark:bg-card/15 p-6 sm:p-8 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 shadow-xl shadow-zinc-200/50 dark:shadow-none relative overflow-hidden group"
-          >
+          <TiltCard className="lg:col-span-3 rounded-2xl overflow-hidden shadow-xl shadow-zinc-200/50 dark:shadow-none">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full h-full rounded-2xl border border-zinc-200/80 dark:border-card-border bg-white/60 dark:bg-card/15 p-6 sm:p-8 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 relative overflow-hidden group"
+            >
             {/* Đóng gói CSS Animation cho Orbit */}
             <style dangerouslySetInnerHTML={{ __html: `
               @keyframes orbit-ts-spin {
@@ -426,6 +433,7 @@ ${bio}`;
 
             </div>
           </motion.div>
+        </TiltCard>
           
         </div>
       </div>
