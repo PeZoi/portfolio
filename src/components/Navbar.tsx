@@ -22,7 +22,7 @@ export default function Navbar({ brandName }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  
+
   const pathname = usePathname() || "";
   const isDetailPage = pathname.includes("/projects");
 
@@ -56,11 +56,6 @@ export default function Navbar({ brandName }: NavbarProps) {
             <span className="h-3 w-1.5 bg-accent animate-pulse" />
           </a>
 
-          {/* Status Badge online/available */}
-          <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[8px] font-medium text-emerald-400 border border-emerald-500/20">
-            <span className="h-1 w-1 rounded-full bg-emerald-400 animate-pulse" />
-            available for work
-          </span>
         </div>
 
         {/* Desktop Navigation & Actions */}
@@ -78,7 +73,7 @@ export default function Navbar({ brandName }: NavbarProps) {
                   >
                     {link.label}
                   </a>
-                  
+
                   {/* Sliding glassmorphism indicator pill */}
                   <AnimatePresence>
                     {hoveredIndex === idx && (
@@ -96,7 +91,7 @@ export default function Navbar({ brandName }: NavbarProps) {
               );
             })}
           </ul>
-          
+
           <div className="h-4 w-[1px] bg-zinc-200 dark:bg-zinc-800" />
           <ThemeToggle />
         </div>
