@@ -60,7 +60,7 @@ export default async function Home() {
     .order("order_index", { ascending: true });
 
   // Chuẩn hóa dữ liệu projects + skills đính kèm
-  const projects = ((projectsData ?? []) as RawProjectRow[]).map((p) => ({
+  const projects = ((projectsData ?? []) as unknown as RawProjectRow[]).map((p) => ({
     id: p.id,
     title: p.title,
     slug: p.slug,

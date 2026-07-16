@@ -28,11 +28,7 @@ interface PageProps {
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-// Bộ phân tích cú pháp Markdown siêu nhẹ nâng cao (Hỗ trợ HTML tag thô copy từ GitHub như img, p, bold...)
-function parseMarkdown(md: string): string {
-  if (!md) return "";
-  return marked.parseSync(md);
-}
+
 
 // Markdown mẫu mặc định khi database chưa có content
 const defaultMarkdownTemplate = (title: string, description: string, githubUrl: string, slug: string) => `# Giới thiệu dự án
