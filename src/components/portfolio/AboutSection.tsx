@@ -77,7 +77,7 @@ ${bio}`;
     // 2. Dòng YAML delimiter "---"
     if (line.trim() === "---") {
       return (
-        <div key={index} className="text-zinc-600 font-semibold select-none">
+        <div key={index} className="text-zinc-400 dark:text-zinc-600 font-semibold select-none">
           {line}
         </div>
       );
@@ -90,9 +90,9 @@ ${bio}`;
       const value = parts.slice(1).join(":");
       return (
         <div key={index}>
-          <span className="text-purple-400 font-semibold">{key}</span>
+          <span className="text-purple-600 dark:text-purple-400 font-semibold">{key}</span>
           <span className="text-zinc-400">:</span>
-          <span className="text-emerald-400">{value}</span>
+          <span className="text-emerald-600 dark:text-emerald-400">{value}</span>
         </div>
       );
     }
@@ -100,7 +100,7 @@ ${bio}`;
     // 4. Dòng Header Markdown H1/H2 (# hoặc ##)
     if (line.startsWith("#")) {
       return (
-        <div key={index} className="text-accent font-bold text-sm sm:text-base border-b border-card-border/30 pb-1 mt-2 mb-1">
+        <div key={index} className="text-accent font-bold text-sm sm:text-base border-b border-zinc-200/60 dark:border-card-border/30 pb-1 mt-2 mb-1">
           {line}
         </div>
       );
@@ -111,14 +111,14 @@ ${bio}`;
       return (
         <div key={index} className="pl-2">
           <span className="text-accent mr-1.5 font-bold">-</span>
-          <span className="text-zinc-300">{line.substring(2)}</span>
+          <span className="text-zinc-700 dark:text-zinc-300">{line.substring(2)}</span>
         </div>
       );
     }
 
     // 6. Dòng văn bản bình thường
     return (
-      <div key={index} className="text-zinc-300 font-mono leading-relaxed tracking-tight text-[11px] sm:text-[12px]">
+      <div key={index} className="text-zinc-700 dark:text-zinc-300 font-mono leading-relaxed tracking-tight text-[11px] sm:text-[12px]">
         {line}
       </div>
     );
@@ -176,17 +176,17 @@ ${bio}`;
             onViewportEnter={() => setStartTyping(true)}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-2 flex flex-col justify-between rounded-2xl border border-card-border bg-black/35 backdrop-blur-sm hover:border-zinc-350 dark:hover:border-zinc-700 transition-all duration-300 shadow-xl min-h-[380px] overflow-hidden"
+            className="lg:col-span-2 flex flex-col justify-between rounded-2xl border border-zinc-200/80 dark:border-card-border bg-white/60 dark:bg-black/35 backdrop-blur-sm hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 shadow-xl shadow-zinc-200/50 dark:shadow-none min-h-[380px] overflow-hidden"
           >
             {/* IDE Title Bar */}
-            <div className="flex items-center justify-between px-5 py-3 bg-black/50 border-b border-card-border/60 select-none">
+            <div className="flex items-center justify-between px-5 py-3 bg-zinc-150/40 dark:bg-black/50 border-b border-zinc-200/60 dark:border-card-border/60 select-none">
               <div className="flex items-center gap-1.5">
                 <div className="h-3 w-3 rounded-full bg-[#ff5f56]" />
                 <div className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
                 <div className="h-3 w-3 rounded-full bg-[#27c93f]" />
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-[10px] font-mono text-zinc-400 bg-card/60 px-2 py-0.5 rounded border border-card-border/40">
+                <span className="text-[10px] font-mono text-zinc-500 dark:text-zinc-400 bg-white/60 dark:bg-card/60 px-2 py-0.5 rounded border border-zinc-200/60 dark:border-card-border/40">
                   bio.md
                 </span>
               </div>
@@ -197,22 +197,22 @@ ${bio}`;
             <div className="flex-1 flex overflow-hidden">
               
               {/* CỘT FILE EXPLORER MỜ ẢO (Xoá tan cảm giác trống trải bên trái) */}
-              <div className="hidden sm:block w-36 border-r border-card-border/40 bg-black/20 p-3.5 font-mono text-[10.5px] text-zinc-550 space-y-3.5 select-none flex-shrink-0">
-                <div className="text-[9px] uppercase tracking-wider text-zinc-600 font-bold font-sans">Explorer</div>
+              <div className="hidden sm:block w-36 border-r border-zinc-200/50 dark:border-card-border/40 bg-zinc-50/40 dark:bg-black/20 p-3.5 font-mono text-[10.5px] text-zinc-500 dark:text-zinc-500 space-y-3.5 select-none flex-shrink-0">
+                <div className="text-[9px] uppercase tracking-wider text-zinc-400 dark:text-zinc-600 font-bold font-sans">Explorer</div>
                 <div className="space-y-2">
-                  <div className="flex items-center gap-1.5 text-zinc-400">
+                  <div className="flex items-center gap-1.5 text-zinc-700 dark:text-zinc-400">
                     <span>📁</span> <span className="font-semibold">portfolio</span>
                   </div>
-                  <div className="pl-3.5 flex items-center gap-1.5 text-zinc-500">
+                  <div className="pl-3.5 flex items-center gap-1.5 text-zinc-400 dark:text-zinc-500">
                     <span>📁</span> components
                   </div>
                   <div className="pl-7 flex items-center gap-1.5 text-accent font-semibold bg-accent/5 rounded px-2 py-0.5 border border-accent/15">
                     <span>📄</span> bio.md
                   </div>
-                  <div className="pl-7 flex items-center gap-1.5 text-zinc-550 hover:text-zinc-400 transition-colors">
+                  <div className="pl-7 flex items-center gap-1.5 text-zinc-400 dark:text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-400 transition-colors">
                     <span>📄</span> skills.ts
                   </div>
-                  <div className="pl-7 flex items-center gap-1.5 text-zinc-550 hover:text-zinc-400 transition-colors">
+                  <div className="pl-7 flex items-center gap-1.5 text-zinc-400 dark:text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-400 transition-colors">
                     <span>📄</span> contact.json
                   </div>
                 </div>
@@ -221,14 +221,14 @@ ${bio}`;
               {/* IDE Code Editor (Line Numbers + Syntax Highlighting) */}
               <div className="flex-1 flex p-5 font-mono text-[11px] sm:text-xs leading-relaxed overflow-y-auto max-h-[300px] select-text">
                 {/* Line Numbers Column */}
-                <div className="text-zinc-650 pr-4 border-r border-card-border/40 select-none text-right w-8 flex-shrink-0">
+                <div className="text-zinc-400 dark:text-zinc-600 pr-4 border-r border-zinc-200/50 dark:border-card-border/40 select-none text-right w-8 flex-shrink-0">
                   {displayLines.map((_, idx) => (
                     <div key={idx}>{String(idx + 1).padStart(2, "0")}</div>
                   ))}
                 </div>
                 
                 {/* Content Area with Syntax Highlighting */}
-                <div className="pl-4 text-zinc-300 dark:text-zinc-200 flex-1 space-y-0.5">
+                <div className="pl-4 text-zinc-700 dark:text-zinc-200 flex-1 space-y-0.5">
                   {displayLines.map((line, idx) => renderSyntaxLine(line, idx))}
                   {typedText.length < rawBioTemplate.length && (
                     <span className="inline-block w-1.5 h-4 bg-accent animate-pulse align-middle ml-1" />
@@ -239,7 +239,7 @@ ${bio}`;
             </div>
             
             {/* IDE Status Bar */}
-            <div className="px-5 py-2 bg-black/40 border-t border-card-border/45 flex items-center justify-between text-[10px] font-mono text-zinc-500 select-none">
+            <div className="px-5 py-2 bg-zinc-100/40 dark:bg-black/40 border-t border-zinc-200/50 dark:border-card-border/45 flex items-center justify-between text-[10px] font-mono text-zinc-400 dark:text-zinc-500 select-none">
               <div className="flex items-center gap-3">
                 <span>UTF-8</span>
                 <span>Markdown</span>
@@ -264,7 +264,7 @@ ${bio}`;
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="group relative rounded-2xl border border-card-border bg-card/15 overflow-hidden min-h-[380px] hover:border-accent/40 transition-all duration-300 shadow-xl cursor-crosshair"
+            className="group relative rounded-2xl border border-zinc-200/80 dark:border-card-border bg-white/20 dark:bg-card/15 overflow-hidden min-h-[380px] hover:border-accent/40 transition-all duration-300 shadow-xl shadow-zinc-200/50 dark:shadow-none cursor-crosshair"
           >
             {avatarUrl ? (
               /* eslint-disable-next-line @next/next/no-img-element */
@@ -282,7 +282,7 @@ ${bio}`;
             )}
             
             {/* Radar Scanline & Screen Glitch mờ khi Hover */}
-            <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.3)_50%),linear-gradient(90deg,rgba(16,185,129,0.06),rgba(0,255,0,0.02),rgba(16,185,129,0.06))] bg-[size:100%_4px,3px_100%] z-20" />
+            <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[linear-gradient(rgba(120,120,120,0)_50%,rgba(0,0,0,0.15)_50%),linear-gradient(90deg,rgba(16,185,129,0.06),rgba(0,255,0,0.02),rgba(16,185,129,0.06))] bg-[size:100%_4px,3px_100%] z-20" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-75 group-hover:opacity-60 transition-opacity z-10" />
             
             <div className="absolute bottom-6 left-6 right-6 z-30">
@@ -301,7 +301,7 @@ ${bio}`;
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-3 rounded-2xl border border-card-border bg-card/15 p-6 sm:p-8 hover:border-zinc-350 dark:hover:border-zinc-700 transition-all duration-300 shadow-xl relative overflow-hidden group"
+            className="lg:col-span-3 rounded-2xl border border-zinc-200/80 dark:border-card-border bg-white/60 dark:bg-card/15 p-6 sm:p-8 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 shadow-xl shadow-zinc-200/50 dark:shadow-none relative overflow-hidden group"
           >
             {/* Đóng gói CSS Animation cho Orbit */}
             <style dangerouslySetInnerHTML={{ __html: `
@@ -343,26 +343,26 @@ ${bio}`;
                   {/* React Center */}
                   <circle cx="100" cy="100" r="10" fill="url(#center-grad)" className="filter drop-shadow-[0_0_6px_#10b981]" />
                   
-                  <ellipse cx="100" cy="100" rx="35" ry="25" fill="none" stroke="rgba(255, 255, 255, 0.08)" strokeWidth="1" strokeDasharray="3 3" />
-                  <ellipse cx="100" cy="100" rx="60" ry="40" fill="none" stroke="rgba(255, 255, 255, 0.06)" strokeWidth="1" />
-                  <ellipse cx="100" cy="100" rx="85" ry="55" fill="none" stroke="rgba(255, 255, 255, 0.04)" strokeWidth="1" />
+                  <ellipse cx="100" cy="100" rx="35" ry="25" fill="none" className="stroke-zinc-200/80 dark:stroke-white/8" strokeWidth="1" strokeDasharray="3 3" />
+                  <ellipse cx="100" cy="100" rx="60" ry="40" fill="none" className="stroke-zinc-200/60 dark:stroke-white/6" strokeWidth="1" />
+                  <ellipse cx="100" cy="100" rx="85" ry="55" fill="none" className="stroke-zinc-200/40 dark:stroke-white/4" strokeWidth="1" />
 
                   {/* TS */}
                   <g className="animate-orbit-ts cursor-pointer group/node">
                     <circle cx="135" cy="100" r="5" fill="#3178c6" className="transition-transform group-hover/node:scale-125" />
-                    <text x="135" y="90" className="text-[8px] fill-zinc-500 font-mono font-bold" textAnchor="middle">TS</text>
+                    <text x="135" y="90" className="text-[8px] fill-zinc-400 dark:fill-zinc-500 font-mono font-bold" textAnchor="middle">TS</text>
                   </g>
 
                   {/* Next */}
                   <g className="animate-orbit-next cursor-pointer group/node">
-                    <circle cx="160" cy="100" r="6" fill="#ffffff" className="transition-transform group-hover/node:scale-125" />
-                    <text x="160" y="88" className="text-[8px] fill-zinc-500 font-mono font-bold" textAnchor="middle">Next</text>
+                    <circle cx="160" cy="100" r="6" className="fill-zinc-800 dark:fill-white transition-transform group-hover/node:scale-125" />
+                    <text x="160" y="88" className="text-[8px] fill-zinc-400 dark:fill-zinc-500 font-mono font-bold" textAnchor="middle">Next</text>
                   </g>
 
                   {/* Node */}
                   <g className="animate-orbit-node cursor-pointer group/node">
                     <circle cx="185" cy="100" r="5" fill="#68a063" className="transition-transform group-hover/node:scale-125" />
-                    <text x="185" y="88" className="text-[8px] fill-zinc-500 font-mono font-bold" textAnchor="middle">Node</text>
+                    <text x="185" y="88" className="text-[8px] fill-zinc-400 dark:fill-zinc-500 font-mono font-bold" textAnchor="middle">Node</text>
                   </g>
 
                   <defs>
@@ -372,7 +372,7 @@ ${bio}`;
                     </radialGradient>
                   </defs>
                 </svg>
-                <span className="absolute text-[8px] font-mono text-emerald-400 font-bold pointer-events-none select-none tracking-tight">React</span>
+                <span className="absolute text-[8px] font-mono text-emerald-500 dark:text-emerald-400 font-bold pointer-events-none select-none tracking-tight">React</span>
               </div>
 
               {/* Cột 2: Location & Clock */}
@@ -383,13 +383,13 @@ ${bio}`;
                     Specifications
                   </span>
                 </div>
-                <div className="space-y-3 text-xs font-mono border-l border-card-border/60 pl-4 py-1">
+                <div className="space-y-3 text-xs font-mono border-l border-zinc-200/80 dark:border-card-border/60 pl-4 py-1">
                   <div className="space-y-0.5">
-                    <span className="text-zinc-500 block text-[10px]">CURRENT_LOCATION:</span>
+                    <span className="text-zinc-400 dark:text-zinc-500 block text-[10px]">CURRENT_LOCATION:</span>
                     <span className="text-foreground font-semibold">Việt Nam (GMT+7)</span>
                   </div>
                   <div className="space-y-0.5">
-                    <span className="text-zinc-500 block text-[10px]">LOCAL_TIME:</span>
+                    <span className="text-zinc-400 dark:text-zinc-500 block text-[10px]">LOCAL_TIME:</span>
                     <span className="text-accent font-bold tracking-wider">{time || "--:--:--"}</span>
                   </div>
                 </div>
@@ -397,17 +397,17 @@ ${bio}`;
 
               {/* Cột 3: Interactive simulated Github contribution grid */}
               <div className="flex flex-col justify-center items-center md:items-end gap-3 select-none">
-                <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest block">
+                <span className="text-[9px] font-mono text-zinc-400 dark:text-zinc-500 uppercase tracking-widest block">
                   GitHub Contribution Activity
                 </span>
                 
                 {/* 7 rows x 15 columns Grid */}
-                <div className="grid grid-flow-col grid-rows-7 gap-1 bg-black/25 p-3 rounded-lg border border-card-border/50">
+                <div className="grid grid-flow-col grid-rows-7 gap-1 bg-zinc-50/40 dark:bg-black/25 p-3 rounded-lg border border-zinc-200/80 dark:border-card-border/50">
                   {commitGrid.map((row, rIdx) =>
                     row.map((val, cIdx) => {
-                      let bgClass = "bg-zinc-800/40 dark:bg-zinc-900/40";
-                      if (val === 1) bgClass = "bg-emerald-950 dark:bg-emerald-950/60";
-                      if (val === 2) bgClass = "bg-emerald-700/80 dark:bg-emerald-700/40";
+                      let bgClass = "bg-zinc-200/60 dark:bg-zinc-900/40";
+                      if (val === 1) bgClass = "bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-250/20 dark:border-none";
+                      if (val === 2) bgClass = "bg-emerald-300/80 dark:bg-emerald-700/40";
                       if (val === 3) bgClass = "bg-accent dark:bg-accent/80 animate-pulse-glow";
                       return (
                         <div
@@ -419,7 +419,7 @@ ${bio}`;
                     })
                   )}
                 </div>
-                <span className="text-[8px] font-mono text-text-muted/40">
+                <span className="text-[8px] font-mono text-zinc-400 dark:text-text-muted/40">
                   less &bull; &bull; &bull; &bull; more
                 </span>
               </div>

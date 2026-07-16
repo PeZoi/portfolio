@@ -179,11 +179,11 @@
 }
 
 .markdown-body p {
-  @apply mb-4 leading-relaxed text-zinc-300;
+  @apply mb-4 leading-relaxed text-zinc-700 dark:text-zinc-300;
 }
 
 .markdown-body blockquote {
-  @apply border-l-4 border-card-border bg-card/10 pl-4 py-2 italic my-4 text-zinc-400;
+  @apply border-l-4 border-card-border bg-card/10 pl-4 py-2 italic my-4 text-zinc-500 dark:text-zinc-400;
 }
 
 .markdown-body table {
@@ -195,7 +195,7 @@
 }
 
 .markdown-body td {
-  @apply px-4 py-2.5 text-xs text-zinc-300 border-b border-card-border/50 bg-card/20;
+  @apply px-4 py-2.5 text-xs text-zinc-700 dark:text-zinc-300 border-b border-card-border/50 bg-card/20;
 }
 
 .markdown-body tr:last-child td {
@@ -203,19 +203,19 @@
 }
 
 .markdown-body ul {
-  @apply list-disc pl-5 my-4 space-y-1.5 text-zinc-300;
+  @apply list-disc pl-5 my-4 space-y-1.5 text-zinc-700 dark:text-zinc-300;
 }
 
 .markdown-body ol {
-  @apply list-decimal pl-5 my-4 space-y-1.5 text-zinc-300;
+  @apply list-decimal pl-5 my-4 space-y-1.5 text-zinc-700 dark:text-zinc-300;
 }
 
 .markdown-body li {
-  @apply leading-relaxed;
+  @apply leading-relaxed text-zinc-700 dark:text-zinc-300;
 }
 
 .markdown-body pre {
-  @apply rounded-xl bg-black/60 border border-card-border/50 p-4 font-mono text-xs text-zinc-300 leading-relaxed overflow-x-auto my-4 select-all;
+  @apply rounded-xl bg-zinc-950 dark:bg-black/60 border border-zinc-200 dark:border-card-border/50 p-4 font-mono text-xs text-zinc-200 dark:text-zinc-300 leading-relaxed overflow-x-auto my-4 select-all;
 }
 
 .markdown-body code {
@@ -223,7 +223,7 @@
 }
 
 .markdown-body pre code {
-  @apply bg-transparent p-0 text-zinc-300;
+  @apply bg-transparent p-0 text-zinc-200 dark:text-zinc-300;
 }
 
 .markdown-body a {

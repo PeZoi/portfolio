@@ -139,7 +139,7 @@ export default function HeroSection({ profile }: HeroSectionProps) {
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-card-border bg-card/40 px-7 py-3.5 text-xs font-semibold text-foreground backdrop-blur-sm transition-all duration-200 hover:bg-card hover:border-zinc-350 dark:hover:border-zinc-700 active:scale-[0.96]"
+              className="inline-flex items-center gap-2 rounded-xl border border-card-border bg-card/40 px-7 py-3.5 text-xs font-semibold text-foreground backdrop-blur-sm transition-all duration-200 hover:bg-card hover:border-zinc-300 dark:hover:border-zinc-700 active:scale-[0.96]"
             >
               contact_me()
             </a>
@@ -151,59 +151,59 @@ export default function HeroSection({ profile }: HeroSectionProps) {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full max-w-2xl rounded-xl border border-card-border bg-black/40 backdrop-blur-md shadow-2xl overflow-hidden text-left"
+          className="w-full max-w-2xl rounded-xl border border-zinc-200/80 dark:border-card-border bg-white/70 dark:bg-black/40 backdrop-blur-md shadow-xl shadow-zinc-200/50 dark:shadow-none overflow-hidden text-left"
         >
           {/* Terminal Title Bar */}
-          <div className="flex items-center justify-between px-4 py-2.5 bg-black/60 border-b border-card-border/60">
+          <div className="flex items-center justify-between px-4 py-2.5 bg-zinc-50/80 dark:bg-black/60 border-b border-zinc-200/60 dark:border-card-border/60">
             <div className="flex items-center gap-1.5">
               <div className="h-3 w-3 rounded-full bg-[#ff5f56]" />
               <div className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
               <div className="h-3 w-3 rounded-full bg-[#27c93f]" />
             </div>
-            <span className="text-[10px] font-mono text-zinc-500 tracking-wider">
+            <span className="text-[10px] font-mono text-zinc-400 dark:text-zinc-500 tracking-wider">
               developer.ts &mdash; bash
             </span>
             <div className="w-10" />
           </div>
 
           {/* Terminal Body */}
-          <div className="p-5 font-mono text-[11px] sm:text-xs leading-relaxed text-zinc-400 overflow-x-auto space-y-2.5">
+          <div className="p-5 font-mono text-[11px] sm:text-xs leading-relaxed text-zinc-700 dark:text-zinc-400 overflow-x-auto space-y-2.5">
             <div>
               <span className="text-accent">dong@portfolio</span>
-              <span className="text-zinc-500">:~#</span> cat developer.ts
+              <span className="text-zinc-400 dark:text-zinc-500">:~#</span> cat developer.ts
             </div>
-            <div className="text-zinc-500">// TypeScript profile definition</div>
+            <div className="text-zinc-400 dark:text-zinc-500">// TypeScript profile definition</div>
             <div>
-              <span className="text-purple-400">const</span>{" "}
-              <span className="text-blue-400">developer</span> = &#123;
+              <span className="text-purple-650 dark:text-purple-400">const</span>{" "}
+              <span className="text-blue-600 dark:text-blue-400">developer</span> = <span className="text-zinc-600 dark:text-zinc-300">&#123;</span>
             </div>
             <div className="pl-4">
-              name: <span className="text-emerald-400">&quot;{name}&quot;</span>,
+              <span className="text-zinc-700 dark:text-zinc-300">name:</span> <span className="text-emerald-600 dark:text-emerald-400">&quot;{name}&quot;</span>,
             </div>
             <div className="pl-4">
-              role: <span className="text-emerald-400">&quot;{profile?.title ?? title}&quot;</span>,
+              <span className="text-zinc-700 dark:text-zinc-300">role:</span> <span className="text-emerald-600 dark:text-emerald-400">&quot;{profile?.title ?? title}&quot;</span>,
             </div>
             <div className="pl-4">
-              skills: <span className="text-zinc-500">[</span>
-              <span className="text-emerald-400">&quot;React&quot;</span>
-              <span className="text-zinc-300">, </span>
-              <span className="text-emerald-400">&quot;Next.js&quot;</span>
-              <span className="text-zinc-300">, </span>
-              <span className="text-emerald-400">&quot;TypeScript&quot;</span>
-              <span className="text-zinc-300">, </span>
-              <span className="text-emerald-400">&quot;Spring boot&quot;</span>
-              <span className="text-zinc-500">]</span>,
+              <span className="text-zinc-700 dark:text-zinc-300">skills:</span> <span className="text-zinc-400 dark:text-zinc-500">[</span>
+              <span className="text-emerald-600 dark:text-emerald-400">&quot;React&quot;</span>
+              <span className="text-zinc-400 dark:text-zinc-300">, </span>
+              <span className="text-emerald-600 dark:text-emerald-400">&quot;Next.js&quot;</span>
+              <span className="text-zinc-400 dark:text-zinc-300">, </span>
+              <span className="text-emerald-600 dark:text-emerald-400">&quot;TypeScript&quot;</span>
+              <span className="text-zinc-400 dark:text-zinc-300">, </span>
+              <span className="text-emerald-600 dark:text-emerald-400">&quot;Spring boot&quot;</span>
+              <span className="text-zinc-400 dark:text-zinc-500">]</span>,
             </div>
             <div className="pl-4">
-              location: <span className="text-emerald-400">&quot;Vietnam (GMT+7)&quot;</span>,
+              <span className="text-zinc-700 dark:text-zinc-300">location:</span> <span className="text-emerald-600 dark:text-emerald-400">&quot;Vietnam (GMT+7)&quot;</span>,
             </div>
             <div className="pl-4">
-              available: <span className="text-amber-400">true</span>
+              <span className="text-zinc-700 dark:text-zinc-300">available:</span> <span className="text-amber-600 dark:text-amber-400">true</span>
             </div>
-            <div>&#125;;</div>
+            <div><span className="text-zinc-600 dark:text-zinc-300">&#125;;</span></div>
             <div>
               <span className="text-accent">dong@portfolio</span>
-              <span className="text-zinc-500">:~#</span> <span className="animate-pulse">_</span>
+              <span className="text-zinc-400 dark:text-zinc-500">:~#</span> <span className="animate-pulse bg-accent w-1.5 h-3.5 inline-block" />
             </div>
           </div>
         </motion.div>
